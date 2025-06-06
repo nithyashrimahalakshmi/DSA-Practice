@@ -15,38 +15,47 @@ class SingleLinkedList{
         }
 
     }
-// Head
+
 
     private Node Head = null;
     
     public void insertAtEnd(int Data)
     {
+        
         Node newNode = new Node(Data);
         Node Temp = Head;
+        if(Temp==null)
+        {
+            Head = newNode;
+        }
+        else{
         while(Temp.Next!=null)
         {
             Temp = Temp.Next;
         }
         Temp.Next = newNode;
-        I++;
+        }
         // System.out.println(Temp.Next.Data+" Stored In Linked List At Ending, Successfully");
 
     }
-   le()
+    public void PrintMiddle()
     {
-        int I = 0;
-        Node Temp = Head;
-        while(Temp!=null)
-        {
-            I++; Temp=Temp.Next;
-        }
-        Temp = Head;
-        for(int m=0; m<(I/2); m++)
-        {
-            Temp = Temp.Next;
+        Node First = Head; Node Second = Head;
 
+        while(First!=null && Second.Next!=null)
+        {
+            Second = Second.Next.Next;
+            First = First.Next;
         }
-        System.out.println("Middle Most Element Of List = "+Temp.Data);
+        if(Second.Next==null)
+        {
+            System.out.println("Middle Most Element = "+First.Data);
+        }
+        else
+        {
+            System.out.println("Middle Most Elements = "+First.Data+" "+First.Next.Data);
+        }
+
 
     }
     public void Print()
@@ -71,7 +80,7 @@ class SingleLinkedList{
 
 
 
-public class DSA{
+public class Middle{
 
 
     
@@ -87,9 +96,9 @@ public class DSA{
         SL.insertAtEnd(44); // 11->22->33->44->null
         SL.insertAtEnd(55);  //11->22->33->44->55->null
         SL.insertAtEnd(66); // 11->22->33->44->55->66->null
-        SL.insertAtEnd(77;   // 11->22->33->44->55->66->77->null
+        SL.insertAtEnd(77);   // 11->22->33->44->55->66->77->null
 
-      SL.printMiddle();  // 44
+      SL.PrintMiddle();  // 44
 
    
 
