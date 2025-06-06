@@ -28,14 +28,20 @@ class SingleLinkedList{
     }
     public void insertAtEnd(int Data)
     {
+        
         Node newNode = new Node(Data);
         Node Temp = Head;
+        if(Temp==null)
+        {
+            Head = newNode;
+        }
+        else{
         while(Temp.Next!=null)
         {
             Temp = Temp.Next;
         }
         Temp.Next = newNode;
-        I++;
+        }
         // System.out.println(Temp.Next.Data+" Stored In Linked List At Ending, Successfully");
 
     }
